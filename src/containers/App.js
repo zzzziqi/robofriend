@@ -58,6 +58,7 @@ import React, { Component } from "react";
 import CardLists from "../components/CardLists";
 import SearchBar from "../components/SearchBar";
 import Scroll from "../components/Scroll";
+import ErrorBoundary from "../components/ErrorBoundary";
 
 // props只能读取
 // 想要更改的话，需要有一个state对象，存数据，想使用state对象的话，就需要通过class来声明类
@@ -125,7 +126,9 @@ class App extends Component {
         {/* <CardLists robots={robots} /> */}
         <SearchBar searchChange={this.onSearchChange} />
         <Scroll>
-          <CardLists robots={filteredRobots} />
+          <ErrorBoundary>
+            <CardLists robots={filteredRobots} />
+          </ErrorBoundary>
         </Scroll>
       </div>
     );

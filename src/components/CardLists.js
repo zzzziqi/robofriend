@@ -12,6 +12,9 @@ const CardLists = ({ robots }) => {
   //       />
   //     );
   //   });
+  // if (true) {
+  //   throw new Error("this is an error");
+  // }
   return (
     <div>
       {/* {cardArr} */}
